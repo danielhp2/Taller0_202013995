@@ -31,7 +31,7 @@ public class Pais
 	// ************************************************************************
 
 	/**
-	 * Construye un nuevo país con el nombre indicado y con una lista vacía de
+	 * Construye un nuevo pais con el nombre indicado y con una lista vacía de
 	 * atletas
 	 * 
 	 * @param nombre El nombre del país

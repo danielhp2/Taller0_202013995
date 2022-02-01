@@ -160,7 +160,7 @@ public class CalculadoraEstadisticas
 		Map<String, Integer> resultado = new HashMap<String, Integer>();
 
 		int mayorCantidadMedallistas = -1;
-
+		
 		for (Pais unPais : paises)
 		{
 			int cantidadMedallistasPais = unPais.contarMedallistas();
@@ -175,7 +175,7 @@ public class CalculadoraEstadisticas
 				resultado.put(unPais.darNombre(), mayorCantidadMedallistas);
 			}
 		}
-
+		
 		return resultado;
 	}
 

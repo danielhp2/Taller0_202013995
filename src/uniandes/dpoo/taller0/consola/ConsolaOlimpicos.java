@@ -373,11 +373,11 @@ public class ConsolaOlimpicos
 	{
 		System.out.println("\n" + "Cargar un archivo de atletas" + "\n");
 
-		String archivo = input("Por favor ingrese el nombre del archivo CSV con los atletas");
+		//String archivo = input("Por favor ingrese el nombre del archivo CSV con los atletas");
 		try
 		{
-			calculadora = LoaderOlimpicos.cargarArchivo(archivo);
-			System.out.println("Se cargó el archivo " + archivo + " con información de los Juegos Olímpicos.");
+			calculadora = LoaderOlimpicos.cargarArchivo("./data/atletas.csv");
+			System.out.println("Se cargó el archivo " + "atletas" + " con información de los Juegos Olímpicos.");
 			Collection<String> eventos = calculadora.darNombresDeportes();
 			System.out.println("Los deportes para los que se tiene información son:");
 			for (String dep : eventos)
