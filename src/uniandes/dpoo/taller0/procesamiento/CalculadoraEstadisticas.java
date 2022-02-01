@@ -66,7 +66,29 @@ public class CalculadoraEstadisticas
 	// ************************************************************************
 	// Métodos
 	// ************************************************************************
-
+	
+	/**
+	 * Modificacion 1 - Taller 0 DPOO
+	 */
+	public String darPaisAtleta(String nombreAtleta)
+	{	
+		String nombre_pais = "";
+		Atleta elAtleta = buscarAtleta(nombreAtleta);
+		
+		if (elAtleta != null)
+		{
+			Pais elPais = elAtleta.darPais();
+			
+			if (elPais != null)
+			{
+				nombre_pais = elPais.darNombre();
+			}
+		}
+		
+		return nombre_pais;
+	}
+	
+	
 	/**
 	 * Calcula cuáles fueron los atletas que participaron en cada evento para el año
 	 * indicado

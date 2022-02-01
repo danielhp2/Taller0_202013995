@@ -29,7 +29,7 @@ public class ConsolaOlimpicos
 	 */
 	public void ejecutarAplicacion()
 	{
-		System.out.println("Estadísticas sobre los Juegos Olímpicos\n");
+		System.out.println("Estadisticas sobre los Juegos Olimpicos\n");
 
 		boolean continuar = true;
 		while (continuar)
@@ -37,7 +37,7 @@ public class ConsolaOlimpicos
 			try
 			{
 				mostrarMenu();
-				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
+				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opcion"));
 				if (opcion_seleccionada == 1)
 					ejecutarCargarAtletas();
 				else if (opcion_seleccionada == 2 && calculadora != null)
@@ -62,18 +62,20 @@ public class ConsolaOlimpicos
 					ejecutarMedallistasPorNacionYGenero();
 				else if (opcion_seleccionada == 12 && calculadora != null)
 					ejecutarPorcentajeMedallistas();
-				else if (opcion_seleccionada == 13)
+				else if (opcion_seleccionada == 13 && calculadora != null)
+					ejecutarModificacion1();
+				else if (opcion_seleccionada == 14)
 				{
-					System.out.println("Saliendo de la aplicación ...");
+					System.out.println("Saliendo de la aplicacion ...");
 					continuar = false;
 				}
 				else if (calculadora == null)
 				{
-					System.out.println("Para poder ejecutar esta opción primero debe cargar un archivo de atletas.");
+					System.out.println("Para poder ejecutar esta opcion primero debe cargar un archivo de atletas.");
 				}
 				else
 				{
-					System.out.println("Por favor seleccione una opción válida.");
+					System.out.println("Por favor seleccione una opcion valida.");
 				}
 			}
 			catch (NumberFormatException e)
@@ -89,22 +91,51 @@ public class ConsolaOlimpicos
 	 */
 	public void mostrarMenu()
 	{
-		System.out.println("\nOpciones de la aplicación\n");
+		System.out.println("\nOpciones de la aplicacion\n");
 		System.out.println("1. Cargar un archivo de atletas");
-		System.out.println("2. Consultar los atletas de un año dado");
+		System.out.println("2. Consultar los atletas de un anio dado");
 		System.out.println("3. Consultar las medallas de un atleta en un periodo");
-		System.out.println("4. Consultar los atletas de un país dado");
-		System.out.println("5. Consultar el país con más medallistas");
+		System.out.println("4. Consultar los atletas de un pais dado");
+		System.out.println("5. Consultar el pais con mas medallistas");
 		System.out.println("6. Consultar todos los medallistas de un evento dado");
-		System.out.println("7. Consultar los atletas con un mínimo de medallas");
+		System.out.println("7. Consultar los atletas con un minimo de medallas");
 		System.out.println("8. Consultar el atleta estrella de todos los tiempos");
-		System.out.println("9. Consultar mejor país en un evento");
+		System.out.println("9. Consultar mejor pais en un evento");
 		System.out.println("10. Consultar el atleta todoterreno");
-		System.out.println("11. Consultar los medallistas por país y género");
+		System.out.println("11. Consultar los medallistas por pais y genero");
 		System.out.println("12. Consultar el porcentaje de atletas que son medallistas");
-		System.out.println("13. Salir de la aplicación\n");
+		System.out.println("14. Salir de la aplicacion\n");
+		System.out.println("13. Ejecutar la Modificacion 1\n");
+	}
+	
+	
+	//***********************************************************************
+	
+	/**
+	 * Modificacion 1 - Taller 0 DPOO
+	 */
+	private void ejecutarModificacion1()
+	{
+		System.out.println("\n" + "Pais de un atleta dado por el usuario" + "\n");
+		
+		String nombre_atleta = input("Digite el nombre del atleta a consultar");
+		
+		String nombrePais = calculadora.darPaisAtleta(nombre_atleta);
+		
+		if (nombrePais != "")
+		{
+			System.out.println("\n" + "El atleta " + nombre_atleta + " pertenece al siguiente pais: " + nombrePais + "\n");
+		}
+		
+		else
+		{
+			System.out.println("\n" + "ERROR: No se encontr� el atleta o el pais. Por favor verifique el nombre del atleta" + "\n");
+		}
 	}
 
+	//***********************************************************************
+	
+	
 	/**
 	 * Le muestra el usuario el porcentaje de atletas que son medallistas
 	 */
